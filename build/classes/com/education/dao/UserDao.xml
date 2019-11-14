@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.education.dao.UserDao">
+  	<resultMap type="User" id="UserMap">
+  		<id column="username" property="username" javaType="String" />
+  		<result column="password" property="password" javaType="String" />
+  		<result column="token" property="token" javaType="String" />
+  	</resultMap>
+  	<resultMap type="AdminUser" id="AdminMap">
+  		<id column="username" property="username" javaType="String" />
+  		<result column="password" property="password" javaType="String" />
+  	</resultMap>
+  	<select id="findUser" parameterType="String" resultMap="UserMap">
+  		select * from User
+  		<where>
+  			<if test="username != null and username != ''">
+  				and username=#{username}
+  			</if>
+  		</where>
+  	</select>
+  	<select id="findUserByToken" parameterType="String" resultMap="UserMap">
+  		select * from User
+  		<where>
+  			<if test="token != null and token !=''">
+  				and token=#{token}
+  			</if>
+  		</where>
+  	</select>
+  	<update id="updatePassword" parameterType="User">
+  		update User
+  		<set>
+  			password=#{password},
+  		</set>
+  		<where>
+  			<if test="username != null and username != ''">
+  				and username=#{username}
+  			</if>
+  		</where>
+  	</update>
+  	<insert id="insertUser" parameterType="User">
+  		insert into User(username,password,token) value(#{username},#{password},#{token})
+  	</insert>
+  	
+  	<select id="findAdminUser" parameterType="String" resultMap="AdminMap">
+  		select * from adminuser
+  		<where>
+  			<if test="username != null and username != ''">
+  				and username=#{username}
+  			</if>
+  		</where>
+  	</select>
+  </mapper>

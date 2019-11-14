@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.education.dao.CoursePartDao">
+ 	<resultMap id="ArtifactMap" type="CoursePart">
+ 		<id column="pid" property="pid" javaType="int" />
+ 		<result column="id" property="id" javaType="int" />
+ 		<result column="cpart" property="partname" javaType="String" />
+ 		<result column="chtml" property="html" javaType="String" />
+ 	</resultMap>
+ 	<select id="findAllCoursePart" resultMap="ArtifactMap">
+ 		select * from course 		
+ 	</select>
+ 	<select id="findCoursePartByPage" parameterType="int" resultMap="ArtifactMap">
+ 		select * from course limit #{current} , 12 		
+ 	</select>
+ 	<select id="findCoursePartByPid" parameterType="int" resultMap="ArtifactMap">
+ 		select * from course
+ 		<where>
+ 			<if test="pid != null">
+ 				and pid=#{pid}
+ 			</if>
+ 		</where>
+ 	</select>
+ 	<select id="findCoursePartByCid" parameterType="int" resultMap="ArtifactMap">
+ 		select * from course
+ 		<where>
+ 			<if test="cid != null">
+ 				and id=#{cid} limit 1
+ 			</if>
+ 		</where>
+ 	</select>
+ 	<select id="findCoursePartKeyVal" parameterType="Integer" resultType="java.util.HashMap">
+ 		select pid,cpart from course
+ 		<where>
+ 			<if test="cid != null">
+ 				and id=#{cid}
+ 			</if>
+ 		</where>
+ 	</select>
+ 	<insert id="insertCoursePart" parameterType="CoursePart">
+ 		insert into course(id,cpart,chtml) value(#{id},#{partname},#{html})
+ 	</insert>
+ 	<delete id="deleteCoursePartByPid" parameterType="int">
+ 		delete from course
+ 		<where>
+ 			<if test="_parameter != null">
+ 				and pid=#{pid}
+ 			</if>
+ 		</where>
+ 	</delete>
+ 	<update id="updateCoursePartByPid" parameterType="CoursePart">
+ 		update course
+ 		<set>
+ 			<if test="pid != null and pid != ''">
+ 				pid=#{pid},
+ 			</if>
+ 			<if test="partname != null and partname != ''">
+ 				cpart=#{partname},
+ 			</if>
+ 			<if test="html != null and html != ''">
+ 				chtml=#{html},
+ 			</if>
+ 		</set>
+ 		<where>
+ 			<if test="pid != null">
+ 				and pid=#{pid}
+ 			</if>
+ 		</where>
+ 	</update>
+ </mapper>

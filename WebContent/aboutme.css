@@ -1,0 +1,40 @@
+body{
+    background-color: #edeff0;
+}
+.content h5{
+    padding: 15px;
+    border-bottom: 1px solid gainsboro;
+}
+.content p{
+    margin: 20px 0px;
+}
+.container{
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 5px;
+}
+.current{
+    border-left: 2px solid red;
+}
+.listcontent{
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 5px;
+}
+.orderlist li{
+    list-style: none;
+    padding:20px 0px;
+    border-bottom: 1px solid gainsboro;
+}
+.orderlist a{
+    padding:0px 20px;
+}
+.orderlist a:hover{
+    text-decoration: none;
+    color: red;
+}
+.container .text{
+    padding: 50px;
+}

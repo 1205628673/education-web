@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="aboutme.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/admin.js"></script>
+</head>
+<body>
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">霁月教育</a>
+  </nav>
+    <section class="row">
+        <div class="container border">
+            <div class="row">
+                <div class="list-group" id="options">
+                    <a href="#" class="list-group-item list-group-item-action" id="queryAllCourse">查询所有课程</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="queryAllPart">查询所有章节</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="addCourse">添加课程</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="addPart">添加章节</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="deletePart">删除章节</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="deleteCourse">删除课程</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="updatePart">修改章节</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="updateCourse">修改课程</a>
+                </div>
+                <div class="content  form-group w-75" style="padding: 0px 20px; margin: 0px 50px" id="content">
+                    <h5 id="currentoption"></h5>
+                    <div id="text" style="text-align: center"></div>                       
+                        <div class="form-group couseid" id="cid">
+                            <label for="cid">课程ID:</label>
+                            <input type="text" class="form-control flush" id="courseid" placeholder="输入课程ID">
+                        </div>
+                        <div class="form-group coursename" id="name">
+                            <label for="name">课程名称:</label>
+                            <input type="text" class="form-control flush"  id="coursename" placeholder="输入课程名称">
+                        </div>
+                        <div class="form-group partid" id="partid">
+                            <label for="partid">章节ID:</label>
+                            <input type="text" class="form-control flush" id="coursepartid" placeholder="输入章节ID">
+                        </div>
+                        <div class="form-group partname" id="partname">
+                            <label for="partname">章节名称:</label>
+                            <input type="text" class="form-control flush"  id="coursepartname" placeholder="输入章节名称">
+                        </div>
+                        <div class="form-group parthtml"  id="html" >
+                            <label for="html">章节内容:</label>
+                            <textarea class="form-control flush" id="courseparthtml" placeholder="输入章节html内容" style="height: 500px"></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn-success form-group" id="submit">提交</button>
+                        </div>
+                         <div class="page" id="page">
+	                        <ul class="pagination pagination-xl justify-content-center" id="pageul">
+	
+	                        </ul>	                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <footer class="jumbotron text-center" style="margin-bottom: 0;">
+        <p>Copyright© 霁月教育 JiYueEdu.com</p>
+        <p><a href="#">友情链接</a> | <a href="#">关于我们</a></p>
+        <p>备案号：闽ICP备15016207号-10</p>
+    </footer>
+</body>
+</html>

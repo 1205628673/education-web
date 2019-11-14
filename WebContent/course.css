@@ -1,0 +1,54 @@
+body{
+    background-color: #edeff0;
+}
+.row{
+    height: 800px;
+}
+.content h5{
+    padding: 15px;
+    border-bottom: 1px solid gainsboro;
+}
+.content p{
+    margin: 20px 0px;
+}
+.container{
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 5px;
+}
+.chaptercontent{
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 5px;
+}
+.coursename{
+    color: #a9a9a9;
+    padding: 10px;
+    background-color: #eee;
+}
+.chapterlist{
+    background-color: white;
+    padding:5px 5px;
+}
+.chapterlist li{
+    background-color: #f6f4f0;
+    list-style: none;
+    padding:10px 5px;
+    border-bottom: 1px solid gainsboro;
+}
+.current{
+    background-color: #c2c2c2;
+}
+.chapterlist a{
+    padding:0px 20px;
+}
+.chapterlist a:hover{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.container .text{
+    padding: 50px;
+}
